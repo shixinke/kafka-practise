@@ -1,27 +1,25 @@
 package com.shixinke.github.kafka.practise.producer.service.impl;
 
-import com.shixinke.github.kafka.practise.common.bean.Result;
-import com.shixinke.github.kafka.practise.common.entity.User;
+import com.shixinke.github.kafka.practise.common.data.Result;
+import com.shixinke.github.kafka.practise.common.data.User;
 import com.shixinke.github.kafka.practise.producer.dto.UserDTO;
-import com.shixinke.github.kafka.practise.producer.service.KafkaMQService;
+import com.shixinke.github.kafka.practise.producer.service.KafkaMQProducerService;
 import com.shixinke.github.kafka.practise.producer.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.time.Instant;
 
-
 /**
- * @author shixinke
+ * @author jiangfangtao
  * @version 1.0
  * @Description
- * @Date 19-2-1 下午1:08
+ * @Date 19-2-2 下午4:54
  */
 @Service
 public class UserServiceImpl implements UserService {
-
     @Resource
-    private KafkaMQService kafkaMQService;
+    private KafkaMQProducerService producerService;
 
     @Override
     public Result create(UserDTO userDTO) {
@@ -34,7 +32,7 @@ public class UserServiceImpl implements UserService {
         /**
          * 上面操作成功后，向消息队列发送一条消息，比如通知邮件服务要发邮件
          */
-        kafkaMQService.send("user_reg", user.getUserId(), user);
+        producerService.send("user_reg", user.getUserId(), user);
         return Result.success(user.getUserId());
     }
 }

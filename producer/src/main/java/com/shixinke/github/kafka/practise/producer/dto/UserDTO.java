@@ -1,5 +1,7 @@
 package com.shixinke.github.kafka.practise.producer.dto;
 
+
+
 import lombok.Data;
 
 /**
