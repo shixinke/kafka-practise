@@ -1,7 +1,7 @@
 package com.shixinke.github.kafka.practise.common.data;
 
 /**
- * @author jiangfangtao
+ * @author shixinke
  * @version 1.0
  * @Description
  * @Date 19-2-2 下午4:19

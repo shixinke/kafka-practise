@@ -1,8 +1,6 @@
 package com.shixinke.github.kafka.practise.producer.service.impl;
 
 import com.shixinke.github.kafka.practise.producer.service.KafkaMQProducerService;
-import org.apache.kafka.clients.producer.Callback;
-import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -20,6 +18,9 @@ import java.util.concurrent.Future;
 @Service
 public class KafkaMQProducerServiceImpl implements KafkaMQProducerService {
 
+    /**
+     * 在生产者配置中声明的KafkaTemplate的Bean类
+     */
     @Resource
     private KafkaTemplate kafkaProducer;
 
@@ -28,5 +29,7 @@ public class KafkaMQProducerServiceImpl implements KafkaMQProducerService {
         ProducerRecord<String, V> record = new ProducerRecord<String, V>(topic, String.valueOf(key), content);
         return kafkaProducer.send(record);
     }
+
+
 
 }

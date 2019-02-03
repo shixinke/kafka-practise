@@ -16,6 +16,12 @@ public class KafkaObjectDeserializer implements Deserializer<Object> {
 
     }
 
+    /**
+     * 反序列化方法
+     * @param topic　主题
+     * @param data　消息内容
+     * @return
+     */
     @Override
     public Object deserialize(String topic, byte[] data) {
         return Converter.byteArray2Bean(data);

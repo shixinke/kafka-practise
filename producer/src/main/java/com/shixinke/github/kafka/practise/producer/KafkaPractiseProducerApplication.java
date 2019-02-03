@@ -11,6 +11,5 @@ public class KafkaPractiseProducerApplication {
     public static void main(String[] args) {
         SpringApplication.run(KafkaPractiseProducerApplication.class, args);
     }
-
 }
 

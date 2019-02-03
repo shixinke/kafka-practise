@@ -18,6 +18,12 @@ public class KafkaObjectSerializer implements Serializer<Object> {
 
     }
 
+    /**
+     * 实现话类
+     * @param topic　主题
+     * @param data 消息内容数据
+     * @return
+     */
     @Override
     public byte[] serialize(String topic, Object data) {
         return Converter.bean2ByteArray(data);

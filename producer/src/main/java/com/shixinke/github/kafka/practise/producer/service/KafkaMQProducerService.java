@@ -12,5 +12,4 @@ import java.util.concurrent.Future;
  */
 public interface KafkaMQProducerService {
     public <K, V> Future<RecordMetadata> send(String topic, K key, V content);
-
 }

@@ -45,7 +45,7 @@ public class User implements Serializable {
         this.createTime = createTime;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "User{" +
                 "userId=" + userId +
@@ -56,5 +56,5 @@ public class User implements Serializable {
                 ", status=" + status +
                 ", createTime=" + createTime +
                 '}';
-    }
+    }*/
 }
